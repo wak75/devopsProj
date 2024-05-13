@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: back
-        image: was24/back
+        image: ${account}/back
         resources:
           limits:
             memory: "128Mi"
