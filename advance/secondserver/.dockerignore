@@ -1,0 +1,3 @@
+# .dockerignore
+#Used to ommit files from docker image build
+node_modules
