@@ -1,8 +1,10 @@
+#Creating service named as "back" for our deployment of type LoadBalancer
 apiVersion: v1
 kind: Service
 metadata:
   name: back
 spec:
+  replicas: 3
   type: LoadBalancer 
   selector:
     app: back
@@ -13,12 +15,14 @@ spec:
 
 
 ---
-
+#Creating deplopyment back with 3 replicas
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: back
+  namespace: devops
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: back
@@ -36,3 +40,25 @@ spec:
             cpu: "250m"
         ports:
         - containerPort: 4000
+
+---
+
+#Setting up hpa for back deployment
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: back-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: back
+  minReplicas: 2
+  maxReplicas: 5
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50

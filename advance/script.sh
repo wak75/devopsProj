@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Check if account name is provided
 syntax() {
     echo "Usage: $0 --ac <accountname>"
     exit 1
@@ -13,22 +14,23 @@ if [ "$1" != "--ac" ]; then
     syntax
 fi
 
+#printing the current working directory
 pwd
 
+#exporting the account name for later use
 export account=$2
 echo $account
 
-# docker-compose build
+#Building the images
+docker compose build
 
-# docker-compose push
+#Pushing the images to docker hub with provided account
+docker compose push
 
-envsubst <firstDeployment.yaml | kubectl apply -f -
+#Creating deployments, Services and autoscaling in Kubernetes cluster for first and second deployments
+envsubst <firstDeployment_v2.yaml | kubectl apply -f -
 
-envsubst <secondDeployment.yaml | kubectl apply -f -
+envsubst <secondDeployment_v2.yaml | kubectl apply -f -
 
-
-output=$(minikube service --url back)
-
-url=$(echo "$output" | awk '{print $NF}')
-
-echo "URL: $url"
+#Getting the url of the service back
+minikube service back --url

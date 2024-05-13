@@ -1,7 +1,9 @@
+#Creating Front Deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: front
+  namespace: devops
 spec:
   selector:
     matchLabels:
@@ -11,6 +13,7 @@ spec:
       labels:
         app: front
     spec:
+      replicas: 3
       containers:
       - name: front
         image: ${account}/front
@@ -23,6 +26,7 @@ spec:
 
 ---
 
+#Creating service named as "front" for our deployment
 apiVersion: v1
 kind: Service
 metadata:
@@ -33,3 +37,25 @@ spec:
   ports:
   - port: 3000
     targetPort: 3000
+
+---
+
+#Setting up horizontal Pod Autoscaler, which will autoscale our deployment based on the load of the application
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: front-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: front
+  minReplicas: 2
+  maxReplicas: 5
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50
