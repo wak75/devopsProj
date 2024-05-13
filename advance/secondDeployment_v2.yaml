@@ -4,7 +4,6 @@ kind: Service
 metadata:
   name: back
 spec:
-  replicas: 3
   type: LoadBalancer 
   selector:
     app: back

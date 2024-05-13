@@ -33,14 +33,17 @@ Before you begin, ensure you have met the following prerequisites:
 
 After completing these steps, you should have Docker, Minikube, and kubectl installed and ready to use for your project setup.
 
-# Easy Setup
+# Beginner Setup: 
 
 For those looking for a quick setup, follow these steps:
 **Advantages**: It does not require you to have a dockerhub ID, as you will not going to push anything into it. All docker images created will stay in your local system.
 
 **Ignore the folder `advance` as we will use the folder and its contents for more advanced setup in later steps.**
 
-1. **Run the Script**: Execute the `script.sh` file. This script automates the process of creating two Docker images, `was24/front` and `was24/back`, using the provided `docker-compose.yml` file. You can find more details about Docker Compose in the [official Docker documentation](https://docs.docker.com/compose/).
+
+(If you are on mac or linux, you might change the permission of the file script.sh using `chmod +x script.sh` before running it.)
+
+1. **Script Execution**:  This script automates the process of creating two Docker images, `was24/front` and `was24/back`, using the provided `docker-compose.yml` file. You can find more details about Docker Compose in the [official Docker documentation](https://docs.docker.com/compose/).
 
 (If you are on mac or linux, you might change the permission of the file script.sh using `chmod +x script.sh` before running it.)
 
@@ -75,7 +78,22 @@ This section guides you through pushing your Docker images to Docker Hub, allowi
 
 To log into Docker Hub from the command line, use the `docker login` command. This command prompts you for your Docker Hub username and password. If you encounter any issues or need more options, you can use `docker login --help` to see the available options.
 
-1. **Advance Folder**: Navigate into the `advance` folder, and execute the `script.sh`.
+**Advance Folder**: Navigate into the `advance` folder, we will use the files and configurations in this folder for the advanced setup.
+
+This section outlines the process of executing the `script.sh` file, which automates the creation of containers and deployments based on the provided account name. The script leverages Kubernetes YAML files to define and manage the deployments.
+
+## Script Execution Process
+
+1. **Running the Script**: Execute the `script.sh` file. This script takes an account name as input and performs the following actions:
+
+    - Creates two containers named `<account>/front` and `<account>/back` based on the provided account name.
+    - Internally connects these containers via a default ClusterIP service, allowing them to communicate within the cluster.
+    - Externally exposes these containers via a LoadBalancer service, making them accessible over the network.
+
+2. **YAML Files**: The script internally calls `firstDeployment_v2.yaml` and `secondDeployment_v2.yaml` to create the deployments. These YAML files define the deployments and their configurations, including the container names, image specifications, and resource limits, along with the service definitions.
+
+3. **Automatic Scaling**: The YAML files also include configurations for automatic scaling of deployment pods. Kubernetes will automatically adjust the number of pod replicas based on the defined criteria, such as CPU usage or custom metrics.
+
 
 
 

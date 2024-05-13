@@ -5,6 +5,7 @@ metadata:
   name: front
   namespace: devops
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: front
@@ -13,7 +14,6 @@ spec:
       labels:
         app: front
     spec:
-      replicas: 3
       containers:
       - name: front
         image: ${account}/front

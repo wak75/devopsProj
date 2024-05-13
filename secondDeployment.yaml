@@ -10,8 +10,6 @@ spec:
   - port: 4000
     targetPort: 4000
 
-
-
 ---
 
 apiVersion: apps/v1
@@ -29,7 +27,7 @@ spec:
     spec:
       containers:
       - name: back
-        image: wak24/back
+        image: was24/back
         resources:
           limits:
             memory: "128Mi"
