@@ -36,6 +36,7 @@ After completing these steps, you should have Docker, Minikube, and kubectl inst
 # Easy Setup
 
 For those looking for a quick setup, follow these steps:
+**Advantages**: It does not require you to have a dockerhub ID, as you will not going to push anything into it. All docker images created will stay in your local system.
 
 1. **Run the Script**: Execute the `script.sh` file. This script automates the process of creating two Docker images, `was24/front` and `was24/back`, using the provided `docker-compose.yml` file. You can find more details about Docker Compose in the [official Docker documentation](https://docs.docker.com/compose/).
 
@@ -43,5 +44,15 @@ For those looking for a quick setup, follow these steps:
 
 3. **Exposure via LoadBalancer**: Finally, the script configures the deployments to be exposed outside the cluster using a LoadBalancer service. This makes the applications accessible over the network. For more information on Kubernetes LoadBalancer services, refer to the [official Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer).
 
-By following these steps, you'll have a simple yet powerful setup ready for development or testing purposes.```
+By following these steps, you'll have a simple yet powerful setup ready for development or testing purposes. The script automates common tasks like building Docker images, deploying applications, and exposing services - allowing you to focus on your code instead of infrastructure configuration.
+
+# Final Step: Access Your Application
+
+After completing the setup, you can access your application by executing the following command in your terminal:
+bash minikube service back --url
+
+This command will provide you with the URL where your application is accessible. Additionally, it will attempt to open this URL in your default web browser automatically. If for some reason the browser does not open, you can manually copy the provided URL and paste it into your preferred web browser to access your application.
+
+For more information on accessing applications running within Minikube, you can refer to the [official Minikube documentation](https://minikube.sigs.k8s.io/docs/handbook/accessing/).
+
 
