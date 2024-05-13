@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  front:
+    container_name: front
+    image: was24/front:1.0.1
+    build:
+      context: ./firstserver
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    
+
+  back:
+    container_name: back
+    image: was24/back:1.0.1
+    build:
+      context: ./secondserver
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    
