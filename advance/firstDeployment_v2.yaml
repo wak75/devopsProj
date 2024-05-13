@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: front
-        image: was24/front
+        image: ${account}/front
         resources:
           limits:
             memory: "128Mi"
