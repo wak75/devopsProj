@@ -49,7 +49,8 @@ By following these steps, you'll have a simple yet powerful setup ready for deve
 # Final Step: Access Your Application
 
 After completing the setup, you can access your application by executing the following command in your terminal:
-bash minikube service back --url
+
+`minikube service back --url`
 
 This command will provide you with the URL where your application is accessible. Additionally, it will attempt to open this URL in your default web browser automatically. If for some reason the browser does not open, you can manually copy the provided URL and paste it into your preferred web browser to access your application.
 
