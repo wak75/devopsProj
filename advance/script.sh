@@ -18,6 +18,7 @@ fi
 pwd
 
 #exporting the account name for later use
+unset $account
 export account=$2
 echo $account
 
