@@ -33,4 +33,3 @@ envsubst <firstDeployment_v2.yaml | kubectl apply -f -
 envsubst <secondDeployment_v2.yaml | kubectl apply -f -
 
 #Getting the url of the service back
-minikube service back --url
