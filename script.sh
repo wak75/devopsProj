@@ -2,4 +2,5 @@
 
 pwd
 
-docker build -t was24/front -f ./firstserver/Dockerfile .
+
+docker compose build
