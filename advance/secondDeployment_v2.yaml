@@ -1,20 +1,4 @@
-#Creating service named as "back" for our deployment of type LoadBalancer
-apiVersion: v1
-kind: Service
-metadata:
-  name: back
-  namespace: devops
-spec:
-  type: LoadBalancer 
-  selector:
-    app: back
-  ports:
-  - port: 4000
-    targetPort: 4000
 
-
-
----
 #Creating deplopyment back with 3 replicas
 apiVersion: apps/v1
 kind: Deployment
@@ -33,13 +17,29 @@ spec:
     spec:
       containers:
       - name: back
-        image: ${account}/back
+        image: ${account}/back:${version}
         resources:
           limits:
             memory: "128Mi"
             cpu: "250m"
         ports:
         - containerPort: 4000
+
+---
+
+#Creating service named as "back" for our deployment of type LoadBalancer
+apiVersion: v1
+kind: Service
+metadata:
+  name: back
+  namespace: devops
+spec:
+  type: LoadBalancer 
+  selector:
+    app: back
+  ports:
+  - port: 4000
+    targetPort: 4000
 
 ---
 

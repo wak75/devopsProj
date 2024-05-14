@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: front
-        image: ${account}/front
+        image: ${account}/front:${version}
         resources:
           limits:
             memory: "128Mi"

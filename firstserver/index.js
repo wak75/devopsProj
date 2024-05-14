@@ -3,8 +3,8 @@ const app = express();
 
 app.get('/',(req,res)=>{
     res.json(
-        {   id: 1,
-            message:"Hello World"
+        {   id: 99,
+            message:"just update some minute stuffs"
         }
     );
 });

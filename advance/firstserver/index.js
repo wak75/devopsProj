@@ -4,7 +4,7 @@ const app = express();
 app.get('/',(req,res)=>{
     res.json(
         {   id: 1,
-            message:"Hello World"
+            message:"Final data for the best practices step"
         }
     );
 });

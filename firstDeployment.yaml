@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
       - name: front
-        image: was24/front
+        image: washim/front
+        imagePullPolicy: Never
         resources:
           limits:
             memory: "128Mi"
