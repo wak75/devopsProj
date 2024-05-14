@@ -33,21 +33,22 @@ Before you begin, ensure you have met the following prerequisites:
 
 After completing these steps, you should have Docker, Minikube, and kubectl installed and ready to use for your project setup.
 
+
+
 # Beginner Setup: 
 
-### NOTE: This section is beneficial for those who want a quick setup without needing to push images to Docker Hub, and have a low system specifications
-
-For those looking for a quick setup, follow these steps:
+### NOTE: This section is beneficial for those who want a quick setup without needing to push images to Docker Hub, and have a low system specifications.
 **Advantages**: It does not require you to have a dockerhub ID, as you will not going to push anything into it. All docker images created will stay in your local system. It also has lesser resource requirement.
 
-**Ignore the folder `advance` as we will use the folder and its contents for more advanced setup in later steps.**
+For those looking for a quick setup, follow these steps:
 
+`Ignore the folder "advance" as we will use the folder and its contents for more advanced setup in later steps.`
 
+### How to run: Just execute the script ./script.sh, it will take care of all necessary setps for you.
 (If you are on mac or linux, you might change the permission of the file script.sh using `chmod +x script.sh` before running it.)
 
+## The Script will:
 1. **Script Execution**:  This script automates the process of creating two Docker images, `was24/front` and `was24/back`, using the provided `docker-compose.yml` file. You can find more details about Docker Compose in the [official Docker documentation](https://docs.docker.com/compose/).
-
-(If you are on mac or linux, you might change the permission of the file script.sh using `chmod +x script.sh` before running it.)
 
 2. **Deployments Creation**: The script will then proceed to create two deployments from files `firstDeployment.yaml` and `secondDeployment.yaml`. These deployments are internally connected via a ClusterIP service, which allows them to communicate within the cluster. Learn more about Kubernetes ClusterIP services in the [official Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/service/#clusterip-service).
 
