@@ -66,6 +66,7 @@ This command will provide you with the URL where your application is accessible.
 
 For more information on accessing applications running within Minikube, you can refer to the [official Minikube documentation](https://minikube.sigs.k8s.io/docs/handbook/accessing/).
 
+==========================================================
 # Advanced Steps:
 
 
