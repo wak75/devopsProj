@@ -1,3 +1,4 @@
+#Setting up service for the deployment back of type LoadBalancer to expose it to external traffic
 apiVersion: v1
 kind: Service
 metadata:
@@ -12,11 +13,13 @@ spec:
 
 ---
 
+#Creating the actual deployment for back
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: back
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: back

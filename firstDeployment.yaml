@@ -1,8 +1,10 @@
+#creating the deployment for front
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: front
 spec:
+  replicas: 2
   selector:
     matchLabels:
       app: front
@@ -22,7 +24,7 @@ spec:
         - containerPort: 3000
 
 ---
-
+#creating service for the deployment first, of default type ClusterIP
 apiVersion: v1
 kind: Service
 metadata:

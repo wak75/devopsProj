@@ -35,8 +35,10 @@ After completing these steps, you should have Docker, Minikube, and kubectl inst
 
 # Beginner Setup: 
 
+### NOTE: This section is beneficial for those who want a quick setup without needing to push images to Docker Hub, and have a low system specifications
+
 For those looking for a quick setup, follow these steps:
-**Advantages**: It does not require you to have a dockerhub ID, as you will not going to push anything into it. All docker images created will stay in your local system.
+**Advantages**: It does not require you to have a dockerhub ID, as you will not going to push anything into it. All docker images created will stay in your local system. It also has lesser resource requirement.
 
 **Ignore the folder `advance` as we will use the folder and its contents for more advanced setup in later steps.**
 
@@ -65,8 +67,12 @@ For more information on accessing applications running within Minikube, you can 
 
 # Advanced Steps:
 
+
+
 ## Pushing Docker Images to Docker Hub
 This section guides you through pushing your Docker images to Docker Hub, allowing you to easily deploy your applications anywhere. Before proceeding, ensure you have a Docker Hub account and are logged in.
+
+`Note: If you want to build the dockers locally and dont want to push it into your dockerhub account, you can comment the line number 29 in /advance/script.sh file. (Already commented by default)`
 
 ## Prerequisites
 

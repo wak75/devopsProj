@@ -26,7 +26,7 @@ echo $account
 docker compose build
 
 #Pushing the images to docker hub with provided account
-docker compose push
+#docker compose push
 
 #Creating deployments, Services and autoscaling in Kubernetes cluster for first and second deployments
 envsubst <firstDeployment_v2.yaml | kubectl apply -f -
