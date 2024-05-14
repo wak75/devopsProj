@@ -48,6 +48,8 @@ For those looking for a quick setup, follow these steps:
 *Just execute the script ./script.sh, it will take care of all necessary setps for you.*\
  (If you are on mac or linux, you might change the permission of the file script.sh using `chmod +x script.sh` before running it.)
 
+By following these steps, you'll have a simple yet powerful setup ready for development or testing purposes. The script automates common tasks like building Docker images, deploying applications, and exposing services - allowing you to focus on your code instead of infrastructure configuration
+
 ## The Script will:
 1. **Script Execution**:  This script automates the process of creating two Docker images, `was24/front` and `was24/back`, using the provided `docker-compose.yml` file. You can find more details about Docker Compose in the [official Docker documentation](https://docs.docker.com/compose/).
 
@@ -55,7 +57,7 @@ For those looking for a quick setup, follow these steps:
 
 3. **Exposure via LoadBalancer**: Finally, the script configures the deployments to be exposed outside the cluster using a LoadBalancer service. This makes the applications accessible over the network. For more information on Kubernetes LoadBalancer services, refer to the [official Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer).
 
-By following these steps, you'll have a simple yet powerful setup ready for development or testing purposes. The script automates common tasks like building Docker images, deploying applications, and exposing services - allowing you to focus on your code instead of infrastructure configuration.
+.
 
 ## Final Step: Access Your Application
 
@@ -105,6 +107,8 @@ This section outlines the process of executing the `script.sh` file, which autom
 2. **YAML Files**: The script internally calls `firstDeployment_v2.yaml` and `secondDeployment_v2.yaml` to create the deployments. These YAML files define the deployments and their configurations, including the container names, image specifications, and resource limits, along with the service definitions.
 
 3. **Automatic Scaling**: The YAML files also include configurations for automatic scaling of deployment pods. Kubernetes will automatically adjust the number of pod replicas based on the defined criteria, such as CPU usage or custom metrics.
+
+
 
 
 
