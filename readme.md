@@ -45,7 +45,7 @@ For those looking for a quick setup, follow these steps:
 `Ignore the folder "advance" as we will use the folder and its contents for more advanced setup in later steps.`
 
 ## How to run: 
-**Just execute the script ./script.sh, it will take care of all necessary setps for you.**\
+*Just execute the script ./script.sh, it will take care of all necessary setps for you.*\
  (If you are on mac or linux, you might change the permission of the file script.sh using `chmod +x script.sh` before running it.)
 
 ## The Script will:
