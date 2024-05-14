@@ -45,8 +45,8 @@ For those looking for a quick setup, follow these steps:
 `Ignore the folder "advance" as we will use the folder and its contents for more advanced setup in later steps.`
 
 ## How to run: 
-**Just execute the script ./script.sh, it will take care of all necessary setps for you.**
-### (If you are on mac or linux, you might change the permission of the file script.sh using `chmod +x script.sh` before running it.)
+**Just execute the script ./script.sh, it will take care of all necessary setps for you.**\
+ (If you are on mac or linux, you might change the permission of the file script.sh using `chmod +x script.sh` before running it.)
 
 ## The Script will:
 1. **Script Execution**:  This script automates the process of creating two Docker images, `was24/front` and `was24/back`, using the provided `docker-compose.yml` file. You can find more details about Docker Compose in the [official Docker documentation](https://docs.docker.com/compose/).
