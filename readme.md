@@ -44,7 +44,8 @@ For those looking for a quick setup, follow these steps:
 
 `Ignore the folder "advance" as we will use the folder and its contents for more advanced setup in later steps.`
 
-### How to run: Just execute the script ./script.sh, it will take care of all necessary setps for you.
+### How to run: 
+**Just execute the script ./script.sh, it will take care of all necessary setps for you.**
 (If you are on mac or linux, you might change the permission of the file script.sh using `chmod +x script.sh` before running it.)
 
 ## The Script will:
@@ -66,10 +67,8 @@ This command will provide you with the URL where your application is accessible.
 
 For more information on accessing applications running within Minikube, you can refer to the [official Minikube documentation](https://minikube.sigs.k8s.io/docs/handbook/accessing/).
 
-==========================================================
-# Advanced Steps:
-
-
+======================================================================================================
+# Best Practices Steps:
 
 ## Pushing Docker Images to Docker Hub
 This section guides you through pushing your Docker images to Docker Hub, allowing you to easily deploy your applications anywhere. Before proceeding, ensure you have a Docker Hub account and are logged in.
