@@ -56,7 +56,7 @@ For those looking for a quick setup, follow these steps:
 
 By following these steps, you'll have a simple yet powerful setup ready for development or testing purposes. The script automates common tasks like building Docker images, deploying applications, and exposing services - allowing you to focus on your code instead of infrastructure configuration.
 
-# Final Step: Access Your Application
+## Final Step: Access Your Application
 
 After completing the setup, you can access your application by executing the following command in your terminal:
 
