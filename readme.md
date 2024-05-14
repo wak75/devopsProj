@@ -67,7 +67,8 @@ This command will provide you with the URL where your application is accessible.
 
 For more information on accessing applications running within Minikube, you can refer to the [official Minikube documentation](https://minikube.sigs.k8s.io/docs/handbook/accessing/).
 
-======================================================================================================
+====================================================================================
+
 # Best Practices Steps:
 
 ## Pushing Docker Images to Docker Hub
@@ -85,14 +86,18 @@ This section guides you through pushing your Docker images to Docker Hub, allowi
 
 To log into Docker Hub from the command line, use the `docker login` command. This command prompts you for your Docker Hub username and password. If you encounter any issues or need more options, you can use `docker login --help` to see the available options.
 
-**Advance Folder**: Navigate into the `advance` folder, we will use the files and configurations in this folder for the advanced setup.
+## How to run: 
+1. **Navigate into the advance folder by using commnd cd advance/, we will use the files and configurations in this folder for the advanced setup.**\
+2. **Execute the script by running ./script.sh --ac <your_dockerhub_username>**\
+3. **Once the script is executed successfully, enter the following command `minikube service back -n devops --url` to get the URL to access the application.**\
 
 This section outlines the process of executing the `script.sh` file, which automates the creation of containers and deployments based on the provided account name. The script leverages Kubernetes YAML files to define and manage the deployments.
 
-## Script Execution Process
+## The Script will: 
 
-1. **Running the Script**: Execute the `script.sh` file. This script takes an account name as input and performs the following actions:
+1. **Running the Script**: This script takes an account name as input and performs the following actions:
 
+    - Creates namespace `devops` if not present already, where all resources will be deployed.
     - Creates two containers named `<account>/front` and `<account>/back` based on the provided account name.
     - Internally connects these containers via a default ClusterIP service, allowing them to communicate within the cluster.
     - Externally exposes these containers via a LoadBalancer service, making them accessible over the network.
